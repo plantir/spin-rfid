@@ -1,0 +1,13 @@
+{
+    "comName": "/dev/tty.usbserial",
+    "accessToken": "jzJt9gs7nUrVPFEULGJzkWKhd8RXE7zsF824ScKeZRmRD8vDsGTn3dFmAdSLKtaKHSp9Zx3SMmUvDjfavfJNwKEhVpzgCtVr6NX7Qat6Src44tHNZV9c2QHFSG2yjsFR",
+    "websocketOrigin": "http://localhost:33333",
+    "websocketPort":7777,
+    "retryCount": 10,
+    "idBuzzEnabled": true,
+    "errorBuzzEnabled": false,
+    "errorBuzzUntil": 2,
+    "idEndpoint": "http://localhost:33333/rfid/new-id",
+    "dailyReviewEndpoint": "http://localhost:33333/rfid/daily-review",
+    "errorEndpoint": "http://localhost:33333/rfid/error"
+}

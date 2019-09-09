@@ -1,5 +1,5 @@
 {
-    "comName": "/dev/tty.usbserial",
+    "comName": "COM9",
     "accessToken": "jzJt9gs7nUrVPFEULGJzkWKhd8RXE7zsF824ScKeZRmRD8vDsGTn3dFmAdSLKtaKHSp9Zx3SMmUvDjfavfJNwKEhVpzgCtVr6NX7Qat6Src44tHNZV9c2QHFSG2yjsFR",
     "websocketOrigin": "http://localhost:33333",
     "websocketPort":7777,

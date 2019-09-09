@@ -50,10 +50,10 @@ module.exports = function (newIdCallback) {
             if (config.idBuzzEnabled)
                 player.play('beep.mp3', function (err) { });
 
-            this.readData = "";
-
             if (newIdCallback)
                 newIdCallback(this.readData);
+
+            this.readData = "";
 
         }, 1000);
     });

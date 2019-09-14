@@ -55,7 +55,7 @@ module.exports = class CustomTransport extends Transport {
     if (data) {
       arr = JSON.parse(data);
     }
-    info.created_at = moment().format('YYYY-MM-DD HH:MM:ss');
+    info.created_at = moment().format('YYYY-MM-DD HH:mm:ss');
     //add data
     arr.push(info);
     //convert it back to json

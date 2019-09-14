@@ -2,16 +2,18 @@
 require('dotenv').config({
   path: process.env.NODE_ENV == 'development' ? './.env.development' : './.env'
 });
-require('./App/Socket');
+require('app-module-path').addPath('./');
+require('App/Socket');
 const SerialPort = require('serialport');
-const Logger = require('./App/Logger');
-const Player = require('./App/Player');
-const Service = require('./App/Service');
-const Emitter = require('./App/Emitter');
+const Logger = require('App/Logger');
+const Player = require('App/Player');
+const Service = require('App/Service');
+const Emitter = require('App/Emitter');
 const moment = require('moment');
 let connected = false;
 let error_audio;
 let type = 'presence';
+Service.send_log_file();
 Emitter.on('new-user', () => {
   type = 'assign';
 });

@@ -42,14 +42,17 @@ setInterval(() => {
       }
       if (type == 'presence') {
         try {
-          await Service.peresence({ rfid: data, presence_at: moment() });
+          let res = await Service.peresence({
+            rfid: data,
+            presence_at: moment()
+          });
           if (process.env.SUCCESS_BUZZ == 'true') {
             Player.success();
           }
           Logger.log({
             level: 'info',
             title: 'presence-success',
-            rfid
+            rfid: data
           });
         } catch (error) {
           if (process.env.WRONG_BUZZ == 'true') {

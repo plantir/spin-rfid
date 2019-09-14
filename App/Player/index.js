@@ -4,7 +4,7 @@ const soundPath = path.join(__dirname, '..', '..', 'assets', 'sounds');
 let audio;
 module.exports = {
   wrong: () => {
-    let file = path.join(soundPath, 'beep-wrong.mp3');
+    let file = path.join(soundPath, 'beep-wrong2.mp3');
     audio = player.play(file);
     return audio;
   },

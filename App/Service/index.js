@@ -1,9 +1,9 @@
 class Service {
   constructor() {
     this.axios = require('axios').create({
-      baseURL: process.env.BASE_URL,
+      baseURL: process.env.API_URL,
       headers: {
-        Authorization: 'Bearer ' + process.env.ACCESS_TOKEN
+        access_token: process.env.ACCESS_TOKEN
       }
     });
   }

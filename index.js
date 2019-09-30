@@ -39,7 +39,7 @@ setInterval(() => {
         return;
       }
       let data = event.toString().trim();
-      if (!data || data.length < 9) {
+      if (!data || data.length < 9 || data == '000000000') {
         return;
       }
       if (type == 'presence') {

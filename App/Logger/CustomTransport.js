@@ -1,6 +1,5 @@
 const Transport = require('winston-transport');
 const fs = require('fs');
-const util = require('util');
 const moment = require('moment');
 module.exports = class CustomTransport extends Transport {
   constructor(opts) {

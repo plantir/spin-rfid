@@ -5,7 +5,7 @@ class Service {
     this.axios = require('axios').create({
       baseURL: process.env.API_URL,
       headers: {
-        access_token: process.env.ACCESS_TOKEN
+        token: process.env.TOKEN
       }
     });
   }

@@ -1,5 +1,6 @@
-const player = require('play-sound')({ player: 'C:\\KMPlayer\\KMPlayer.exe' });
 const path = require('path');
+const player_path = path.join(__dirname, '../..', 'KMPlayer/KMPlayer.exe');
+const player = require('play-sound')({ player: player_path });
 const soundPath = path.join(__dirname, '..', '..', 'assets', 'sounds');
 let audio;
 module.exports = {

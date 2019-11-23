@@ -6,12 +6,12 @@ require("app-module-path").addPath("./");
 require("App/Socket");
 const SerialPort = require("serialport");
 const Logger = require("App/Logger");
-const Player = require("App/Player");
+// const Player = require("App/Player");
 const Service = require("App/Service");
 const Emitter = require("App/Emitter");
 const moment = require("moment");
 let connected = false;
-let error_audio;
+// let error_audio;
 let type = "presence";
 Service.send_log_file();
 Emitter.on("new-user", () => {
@@ -66,6 +66,11 @@ setInterval(() => {
         //     error
         //   });
         // }
+        Logger.log({
+          level: "info",
+          title: "presence",
+          rfid: data
+        });
         Emitter.emit("presence", data);
       } else if (type == "assign") {
         Emitter.emit("assign", data);
@@ -79,7 +84,7 @@ setInterval(() => {
         comName
       });
       connected = true;
-      error_audio && error_audio.kill();
+      // error_audio && error_audio.kill();
     });
 
     port.on("close", x => {
@@ -104,6 +109,6 @@ function device_error(error) {
     error
   });
   if (process.env.ERROR_BUZZ == "true") {
-    error_audio = Player.error();
+    // error_audio = Player.error();
   }
 }

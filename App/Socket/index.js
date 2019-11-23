@@ -2,6 +2,7 @@ const server = require("http").createServer();
 const io = require("socket.io")(server);
 const Emitter = require("../Emitter");
 const Logger = require("App/Logger");
+
 io.on("connection", client => {
   client.on("new-user", () => {
     Emitter.emit("new-user");
@@ -16,17 +17,21 @@ io.on("connection", client => {
     client.emit("presence", data);
   });
   client.on("presence-callback", ({ rfid, credit, message }) => {
+    if (!rfid) {
+      return;
+    }
     if (credit) {
       Logger.log({
         level: "info",
-        title: "presence-success",
+        title: "presence-callback",
         rfid,
-        credit
+        credit,
+        message
       });
     } else {
       Logger.log({
         level: "error",
-        title: "presence-failed",
+        title: "presence-callback",
         rfid: rfid,
         error: message
       });

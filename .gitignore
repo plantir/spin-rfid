@@ -86,7 +86,6 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-.env
 logs/
 .vscode
 
